@@ -31,7 +31,7 @@ jobs:
      # Compiles classes to test 
       - name: compile classes
         working-directory: ./src/PROG5111
-        run: javac -cp "../../testresources/junit-platform-console-standalone-1.8.2.jar" PROG5111/ST10102630.java PROG5111/Message.java "../../test/PROG5111/ST10102630Test.java"  "../../test/PROG5111/MessageTest.java"
+        run: javac -cp "../../testresources/junit-platform-console-standalone-1.8.2.jar" PROG5111/ST10102630IT.java PROG5111/Message.java "../../test/PROG5111/ST10102630IT.java"  "../../test/PROG5111/MessageTest.java"
              
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
