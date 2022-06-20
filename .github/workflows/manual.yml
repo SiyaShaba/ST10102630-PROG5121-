@@ -30,32 +30,32 @@ jobs:
         run: ls
      # Compiles classes to test 
       - name: compile classes
-        working-directory: ./src/PROG5121
-        run: javac -cp "../../testresources/junit-platform-console-standalone-1.8.2.jar" PROG5121/ST10102630.java PROG5121/Message.java "../../test/PROG5121/ST10102630Test.java"  "../../test/PROG5121/MessageTest.java"
+        working-directory: ./src/PROG5111
+        run: javac -cp "../../testresources/junit-platform-console-standalone-1.8.2.jar" PROG5111/ST10102630.java PROG5111/Message.java "../../test/PROG5111/ST10102630Test.java"  "../../test/PROG5111/MessageTest.java"
              
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
-        working-directory: ./src/PROG5121
+        working-directory: ./src/PROG5111
         run: ls
         
         
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
-        working-directory: ./src/PROG5121
-        run: cp -t  "../../test/PROG5121" ST10102630.class Message.class 
+        working-directory: ./src/PROG5111
+        run: cp -t  "../../test/PROG5111" ST10102630.class Message.class 
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
-        working-directory: ./test/PROG5121
-        run: cp -t  "../../testresources/" TaskTest.class SearchTest.class LoginTest.class 
+        working-directory: ./test/PROG5111
+        run: cp -t  "../../test/PROG5111" ST10102630.class Message.class 
         
         # list contents or directory
       - name: List contents test package
-        working-directory: ./test/PROG5121
+        working-directory: ./test/PROG5111
         run: ls
         
         #run Message and output report 
       - name: run tests and create report 
         working-directory: ./test
-        run: java  "../testresources/junit-platform-suite-commons-1.8.2.jar:../testresources/junit-platform-suite-api-1.8.2.jar:../testresources/junit-platform-suite-engine-1.8.2:../testresources/juniorg.junit.platform.console.ConsoleLauncher " -cp "./PROG5121" --select-class MessageTest  --reports-dir ="reports"
+        run: java  "../testresources/junit-platform-suite-commons-1.8.2.jar:../testresources/junit-platform-suite-api-1.8.2.jar:../testresources/junit-platform-suite-engine-1.8.2:../testresources/juniorg.junit.platform.console.ConsoleLauncher " -cp "./PROG5111" --select-class MessageTest  --reports-dir ="reports"
 
